@@ -1,0 +1,5 @@
+My vim config.
+
+To use: add a .vimrc the home directory with the following line:
+
+runtime vimrc
