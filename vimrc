@@ -16,8 +16,6 @@ set laststatus=2                    " use 2 lines for status bar
 set hlsearch                        " highlight searched words
 set ttyfast
 set cursorline
-noremap <leader>ev :e $MYVIMRC<cr>
-noremap <leader>ez :e ~/.zshrc<cr>
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 command WS match ExtraWhitespace /\s\+$/
@@ -29,10 +27,12 @@ set wildmode=longest,list,full
 set wildmenu
 set nocompatible
 filetype plugin indent on
-let g:molokai_original = 1
-"colo molokai
+let g:rehash256 = 1
+" let g:molokai_original = 1
+colo molokai
 hi Search cterm=NONE ctermfg=white ctermbg=blue
 hi Visual cterm=NONE ctermfg=black ctermbg=green
+hi Normal ctermfg=252 ctermbg=none
 "hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 map <C-t> :FufFile<CR>
 map <C-p>a :FufFile **/<CR>
