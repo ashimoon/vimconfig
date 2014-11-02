@@ -15,6 +15,7 @@ set smartcase                       " become case sensitive with uppercase
 set bs=indent,eol,start             " allow backspacing everything
 set laststatus=2                    " use 2 lines for status bar
 set hlsearch                        " highlight searched words
+set incsearch                       " highlight search as you type
 set ttyfast
 set cursorline
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -55,3 +56,16 @@ noremap <Leader>vs :vertical resize 80<CR>
 nmap <F1> 
 imap <F1> 
 let g:NERDTreeWinSize = 45
+set noswapfile
+
+" Make j and k maintain same horizontal position for wrapped lines
+" Warning: makes relative number movements not work
+" nmap j gj
+" nmap k gk
+
+nmap \r :setlocal relativenumber!<CR>
+nmap \p :set paste!<CR>
+nmap \h :nohl<CR>
+nmap \n :NERDTreeToggle<CR>
+nmap \t 0gg
+
