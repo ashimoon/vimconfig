@@ -69,3 +69,13 @@ nmap \h :nohl<CR>
 nmap \n :NERDTreeToggle<CR>
 nmap \t 0gg
 
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Arrow keys resize windows
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
+
