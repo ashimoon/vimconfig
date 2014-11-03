@@ -1,3 +1,4 @@
+set nocompatible                    " oh no
 execute pathogen#infect()
 
 set expandtab
@@ -25,7 +26,6 @@ set cursorline                      " highlight the line
 set noswapfile                      " no swp files created
 set wildmode=longest,list,full
 set wildmenu
-set nocompatible                    " oh no
 
 " Highlight tabs and trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -66,16 +66,27 @@ map <C-J>v :Validate<CR>
 map <C-J>f :JavaCorrect<CR>
 
 " Misc
-noremap <Leader>s :w<CR>                " save
-nmap <F1>                             " F1 does nothing
-imap <F1>                             " F1 does nothing
-nmap \r :setlocal relativenumber!<CR>   " toggle relative line numbers
-nmap \p :set paste!<CR>                 " toggle paste mode
-nmap \h :nohl<CR>                       " turn off highlighting
-nmap \n :NERDTreeToggle<CR>             " toggle nerd tree
-nmap \t 0gg                             " goto top
-nmap \a O<ESC>                          " insert lines above
-nmap \b o<ESC>                          " insert lines below
+" save
+nmap \s :w<CR>
+nmap ,s :w<CR>
+" F1 does nothing
+nmap <F1> 
+" F1 does nothing
+imap <F1> 
+" toggle relative line numbers
+nmap \r :setlocal relativenumber!<CR>
+" toggle paste mode
+nmap \p :set paste!<CR>
+" turn off highlighting
+nmap \h :nohl<CR>
+" toggle nerd tree
+nmap \n :NERDTreeToggle<CR>
+" goto top
+nmap \t 0gg
+" insert lines above
+nmap \a O<ESC>
+" insert lines below
+nmap \b o<ESC>
 
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
