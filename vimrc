@@ -47,23 +47,37 @@ hi Normal ctermfg=252 ctermbg=none " For transparent terminals
 " Fuzzy finder bindings
 map <C-t> :FufFile<CR>
 map <C-p>a :FufFile **/<CR>
-map <C-p>t :FufFile tst**/<CR>
-map <C-p>s :FufFile src**/<CR>
+map <C-p>t :FufFile */tst/**/<CR>
+map <C-p>s :FufFile */src/**/<CR>
 map <C-l> :FufLine<CR>
 
 " NERDTree
 map <C-n> :NERDTree<CR>
+nmap ,n :NERDTree<CR>
 map <C-n>f :NERDTreeFind<CR>
+nmap ,nf :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 45
 
 " Eclim bindings
 map <C-U>m :JUnit<CR>
+nmap ,jm :JUnit<CR>
 map <C-U>f :JUnit %<CR>
+nmap ,jf :JUnit %<CR>
 map <C-J>c :JavaDocComment<CR>
+nmap ,jc :JavaDocComment<CR>
 map <C-J>i :JavaImport<CR>
+nmap ,ji :JavaImport<CR>
+" Allow importing while in insert mode
+inoremap <C-J>i <C-O>:JavaImport<CR>
 map <C-J>o :JavaImportOrganize<CR>
+nmap ,jo :JavaImportOrganize<CR>
 map <C-J>v :Validate<CR>
+nmap ,jv :Validate<CR>
 map <C-J>f :JavaCorrect<CR>
+nmap ,jf :JavaCorrect<CR>
+map <C-J>d :JavaDocPreview<CR>
+nmap ,jd :JavaDocPreview<CR>
+inoremap <C-J>d <C-O>:JavaDocPreview<CR>
 
 " Misc
 " save
@@ -97,4 +111,8 @@ noremap <up>    <C-W>+
 noremap <down>  <C-W>-
 noremap <left>  3<C-W><
 noremap <right> 3<C-W>>
+
+" Unit test scaffolding
+noremap ,ta :/public class<CR>I@RunWith(MockitoJUnitRunner.class)<CR><ESC>:JavaImportOrganize<CR>:nohl<CR>
+noremap ,ts :/public class<CR><CR>o/** Runs before each test. */<CR>@Before<CR>public void setup() {<CR>}<CR><ESC>:JavaImportOrganize<CR>:nohl<CR>
 
