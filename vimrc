@@ -27,6 +27,9 @@ set noswapfile                      " no swp files created
 set wildmode=longest,list,full
 set wildmenu
 
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 " Highlight tabs and trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
